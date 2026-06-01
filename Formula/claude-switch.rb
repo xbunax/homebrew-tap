@@ -1,8 +1,8 @@
 class ClaudeSwitch < Formula
   desc "TUI tool for switching Claude Code API backends"
   homepage "https://github.com/xbunax/claude-switch-tui"
-  url "https://github.com/xbunax/claude-switch-tui/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "443be10b8061dd048838d783c538359c4d1d7b894b47828219714db2bfe88d30"
+  url "https://github.com/xbunax/claude-switch-tui/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "3302d953c3112e8929e2d313906ac0fd3b292a457cafbd7eb12a17fa838456ad"
   license "MIT"
 
   depends_on "rust" => :build
