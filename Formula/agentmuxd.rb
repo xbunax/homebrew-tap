@@ -1,9 +1,10 @@
 class Agentmuxd < Formula
-  desc "Connect mobile agents to existing Mac tmux sessions over SSH"
+  desc "Connect mobile agents to Mac tmux sessions over SSH or iroh"
   homepage "https://github.com/xbunax/agentmux"
-  url "https://github.com/xbunax/agentmux/archive/ebe1089eee6d17eccdb927a2816c615c05278f23.tar.gz"
+  url "https://github.com/xbunax/agentmux/archive/08084ce6754a446e2f11899868d5510d30751f12.tar.gz"
   version "0.1.0"
-  sha256 "ab08bcdf54a4993e20603f2a001ad3811d040ee53acde402ca2d28a0f757a164"
+  revision 1
+  sha256 "9668bad31018142c0db204fe65bc35ef5327ff49d4863fe3ddfe3e49680dc505"
   head "https://github.com/xbunax/agentmux.git", branch: "main"
 
   depends_on "rust" => :build
@@ -38,7 +39,11 @@ class Agentmuxd < Formula
       Start as your login user (without sudo), so it can access your tmux sessions:
         brew services start xbunax/tap/agentmuxd
 
-      Enable macOS Remote Login for the iPhone SSH connection.
+      To pair without SSH, run locally while this service is running:
+        agentmuxd pair --transport iroh
+      In AgentMux for iOS 17.5+, scan the resulting QR code.
+      The code expires in five minutes; each code can be used only once.
+      SSH remains available; enable macOS Remote Login to use SSH login.
       Install and log in to the agent CLIs separately. Configure their absolute
       executable paths if they are not on the service PATH.
     EOS
